@@ -6751,7 +6751,7 @@ textarea {
   -ms-border-radius: 5px;
   border-radius: 5px;
   padding: 40px 32px;
-  min-height: 400px;
+  min-height: 350px;
   height: 100%;
   display: -webkit-box;
   display: -moz-box;
