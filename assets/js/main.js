@@ -411,3 +411,61 @@ function aosAnimation() {
 
 
 })(jQuery);
+
+
+// popup form js code start
+let popup = document.getElementById("popupForm");
+let openBtn = document.getElementById("openPopupBtn");
+let closeBtn = document.querySelector(".closeBtn");
+
+openBtn.onclick = () => {
+    popup.style.display = "flex";
+};
+
+closeBtn.onclick = () => {
+    popup.style.display = "none";
+};
+
+window.onclick = (e) => {
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+};
+
+// popup form js code end
+
+// javascript cod for sending success form button submission 
+document.getElementById("popupFormData").addEventListener("submit", function(e){
+    e.preventDefault(); 
+
+    let formData = new FormData(this);
+
+    fetch("sendmail.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+
+        // Success Message
+        let msg = document.getElementById("formMessage");
+        msg.style.color = "green";
+        msg.innerHTML = "🎉 Your details have been submitted successfully!";
+
+        // Clear form fields
+        document.getElementById("popupFormData").reset();
+
+        // 3 seconds baad popup close
+        setTimeout(() => {
+            document.getElementById("popupForm").style.display = "none";
+            msg.innerHTML = "";  // message remove after closing
+        }, 2000);
+
+    })
+    .catch(error => {
+        let msg = document.getElementById("formMessage");
+        msg.style.color = "red";
+        msg.innerHTML = "⚠ Something went wrong! Try again.";
+    });
+});
+// javascript cod for sending success form button submission 
