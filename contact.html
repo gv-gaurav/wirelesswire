@@ -37,6 +37,7 @@
     <!-- Scroll-top-end-->
     <!-- header-area -->
      <header>
+
          <div class="tg-header__top">
             <div class="container">
                 <div class="row">
@@ -60,7 +61,7 @@
                                 </div>
                                 <p>Want a new broadband connection? Upgrade your speed instantly!</p>
                             </div>
-                            <a href="#!" class="tg-header__top-btn">Join Today</a>
+                            <a id="openPopupBtn" href="#!" class="tg-header__top-btn">Join Today</a>
                         </div>
                     </div>
                 </div>
@@ -91,16 +92,16 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="menu-item-has-childre"><a href="index.html">Home</a>
+                                        <li class="menu-item-has-childre active"><a href="index.html">Home</a>
                                             
                                         </li>
-                                        <li><a href="about.html">About Us</a>
+                                        <li class=""><a href="about.html">About Us</a>
                                         </li>
                                         <li class=""><a href="#">Services</a>
                                         </li>
                                         <li class=""><a href="#">Pricing</a>
                                         </li>
-                                        <li class="active"><a href="contact.html">Contact</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action">
@@ -144,11 +145,27 @@
                                                         </svg>
                                                     </a>
                                                 </div>
-                                             
+                                                <div class="header-dropdown-social">
+                                                    <span class="title">Get Connected</span>
+                                                    <ul class="list-wrap">
+                                                        <li>
+                                                            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </li>
                                         <li class="header-btn">
-                                            <a href="contact.html" class="tg-btn tg-btn-two">
+                                            <a id="openPopupBtn" class="tg-btn tg-btn-two">
                                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M6 5.33333V4C6 3.64638 6.14048 3.30724 6.39052 3.05719C6.64057 2.80714 6.97971 2.66667 7.33333 2.66667H12C12.3536 2.66667 12.6928 2.80714 12.9428 3.05719C13.1929 3.30724 13.3333 3.64638 13.3333 4V12C13.3333 12.3536 13.1929 12.6928 12.9428 12.9428C12.6928 13.1929 12.3536 13.3333 12 13.3333H7.33333C6.97971 13.3333 6.64057 13.1929 6.39052 12.9428C6.14048 12.6928 6 12.3536 6 12V10.6667" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
                                                     <path d="M2 8H10.6667L8.66667 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
@@ -172,7 +189,7 @@
             <nav class="tgmobile__menu-box">
                 <div class="close-btn"><i class="tg-flaticon-close-1"></i></div>
                 <div class="nav-logo">
-                    <a href="index-2.html"><img src="assets/img/logo/logo.svg" alt="Logo"></a>
+                    <a href="index-2.html"><img src="assets/img/logo/wirelesswire-logo.png" alt="Logo"></a>
                 </div>
                 <div class="tgmobile__search">
                     <form action="#">
@@ -194,7 +211,7 @@
                 </div>
             </nav>
         </div>
-        <div class="tgmobile__menu-backdrop"></div>
+        <div class="tgmobile__menu-backdrop"></div> 
         <!-- End Mobile Menu -->
 
     </header>

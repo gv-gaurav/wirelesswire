@@ -10981,3 +10981,10 @@ textarea {
 }
 
 /* popup form css code end */
+
+
+@media screen and (max-width: 580px) {
+  .tg-header__top-content-left p {
+    font-size: 11px;
+  }
+}
