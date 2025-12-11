@@ -469,3 +469,71 @@ document.getElementById("popupFormData").addEventListener("submit", function(e){
     });
 });
 // javascript cod for sending success form button submission 
+
+
+
+
+  // Data Object based on your image
+    // Format: 'Months': { 'Speed': Price }
+    const pricingData = {
+        '1': {
+            '50': 500,
+            '75': 549,
+            '100': 599,
+            '200': 749
+        },
+        '3': {
+            '50': 449,
+            '75': 499,
+            '100': 549,
+            '200': 699
+        },
+        '6': {
+            '50': 425,
+            '75': 450,
+            '100': 500,
+            '200': 600
+        },
+        // Placeholder for 12 months since it wasn't in the image
+        '12': {
+            '50': 399, 
+            '75': 425,
+            '100': 475,
+            '200': 575
+        }
+    };
+
+    function updatePrices(months) {
+        // 1. Update Buttons State
+        // Remove active class from all buttons
+        document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+        // Add active class to the clicked button (using event.target is tricky if function called directly, so we use logic)
+        // A simple way is to find the button by its text or pass 'this'
+        const buttons = document.querySelectorAll('.nav-link');
+        buttons.forEach(btn => {
+            if(btn.innerText.includes(months + " Month")) {
+                btn.classList.add('active');
+            }
+        });
+
+        // 2. Update Price Text with animation effect
+        const speeds = ['50', '75', '100', '200'];
+        
+        speeds.forEach(speed => {
+            const priceElement = document.getElementById(`price-${speed}`);
+            // Fade out
+            priceElement.style.opacity = 0;
+            
+            setTimeout(() => {
+                // Update text
+                priceElement.innerText = pricingData[months][speed];
+                // Fade in
+                priceElement.style.opacity = 1;
+            }, 200);
+        });
+    }
+
+    // Add transition to price elements for smooth effect
+    document.querySelectorAll('.price-tag span').forEach(el => {
+        el.style.transition = "opacity 0.2s ease-in-out";
+    });
